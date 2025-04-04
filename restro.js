@@ -1,63 +1,9 @@
-// const API_KEY = 'OOWXpoUEONXfPKhYRwT7vd6WbQSySDXYWeyJMBpMjMthbe40KbNMZomD';
-// const query = 'indian food top view vegetable cut';
 
-// async function fetchVideo() {
-//   try {
-//     const response = await fetch(`https://api.pexels.com/videos/search?query=${query}&per_page=1`, {
-//       headers: {
-//         Authorization: API_KEY
-//       }
-//     });
 
-//     if (!response.ok) {
-//       throw new Error('Failed to fetch video');
-//     }
-
-//     const data = await response.json();
-//     const videoUrl = data.videos[0]?.video_files?.find(file => file.width >= 1280)?.link || data.videos[0]?.video_files[0]?.link;
-
-//     if (videoUrl) {
-//       const videoBackground = document.getElementById('video-background');
-//       videoBackground.innerHTML = `<video autoplay loop muted playsinline id="bg-video">
-//         <source src="${videoUrl}" type="video/mp4">
-//         Your browser does not support HTML5 video.
-//       </video>`;
-
-//       // Container styles to ensure full-screen coverage
-//       videoBackground.style.cssText = `
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100vw;
-//         height: 100vh;
-//         overflow: hidden;
-//         z-index: -1;
-//       `;
-
-//       // Video styles to cover all white space
-//       const bgVideo = document.getElementById('bg-video');
-//       bgVideo.style.cssText = `
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         width: 100vw;
-//         height: 100vh;
-//         object-fit: cover;
-//         min-width: 100vw;
-//         min-height: 100vh;
-//       `;
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// fetchVideo();
 const API_KEY = 'OOWXpoUEONXfPKhYRwT7vd6WbQSySDXYWeyJMBpMjMthbe40KbNMZomD';
-const query = 'indian food top view vegetable cut';
 
-async function fetchVideo() {
+// Function to fetch video from Pexels API
+async function fetchVideo(query, videoElementId) {
   try {
     const response = await fetch(`https://api.pexels.com/videos/search?query=${query}&per_page=1`, {
       headers: {
@@ -66,19 +12,75 @@ async function fetchVideo() {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch video');
+      throw new Error(`Failed to fetch video for query: ${query}`);
     }
 
     const data = await response.json();
     const videoUrl = data.videos[0]?.video_files?.find(file => file.width >= 1280)?.link || data.videos[0]?.video_files[0]?.link;
 
     if (videoUrl) {
-      const bgVideo = document.getElementById('bg-video');
-      bgVideo.innerHTML = `<source src="${videoUrl}" type="video/mp4">`;
+      const videoElement = document.getElementById(videoElementId);
+      if (videoElement) {
+        videoElement.innerHTML = `<source src="${videoUrl}" type="video/mp4">`;
+      } else {
+        console.warn(`Video element with ID "${videoElementId}" not found.`);
+      }
     }
   } catch (error) {
     console.error(error);
   }
 }
 
-fetchVideo();
+// Fetch videos for both sections
+fetchVideo('indian food top view vegetable cut', 'bg-video'); 
+fetchVideo('wheat farm hand slow green 4k', 'bg-resources'); 
+
+
+
+
+let lastScrollY = window.scrollY; // Store last scroll position
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+        // Scrolling Down -> Hide Navbar
+        navbar.classList.add("hide");
+    } else {
+      navbar.classList.remove("hide");
+        
+    }
+    lastScrollY = window.scrollY; // Update last scroll position
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  // Toggle menu on click
+  menuToggle.addEventListener("click", (event) => {
+      navLinks.classList.toggle("active");
+      event.stopPropagation(); // Prevent this click from bubbling to the document
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+      if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+          navLinks.classList.remove("active");
+      }
+  });
+
+  // Smooth scrolling for menu links
+  document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevent default anchor behavior
+          const targetId = link.getAttribute('data-target');
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+
+          // Hide menu after clicking a link
+          navLinks.classList.remove("active");
+      });
+  });
+});
