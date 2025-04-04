@@ -9,11 +9,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lilita+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Merienda:wght@300..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Merienda:wght@300..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Rammetto+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#000000"> 
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Caprasimo&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Merienda:wght@300..900&family=Paytone+One&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Rammetto+One&family=Sofia&family=Titan+One&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="baap">
-    <div class="main">
-        <div class="navbar">
+  <div class="baap">
+  
+    <div class="navbar">
+      <div class="nav-container">
+          <ul class="nav-links">
+              
+              <li><a href="#" data-target="main2">About Us</a></li>
+              <li><a href="#" data-target="main3">Top Dishes</a></li>
+              <li><a href="#" data-target="main4">Resources</a></li>
+              <li><a href="#" data-target="main5">Location</a></li>
+          </ul>
+          <button class="menu-toggle">☰</button>
+      </div>
+  </div>
+    
+    
+    
+      
+        
+        
+    
+    <div class="main" id="main">
+        <!-- <div class="navbar">
             <div class="navbar">
                 <div class="nav-container">
                   <ul class="nav-links">
@@ -22,18 +50,18 @@
                     <li><a href="#">Top Dishes</a></li>
                     <li><a href="#"><img src="contact-icon.png" alt="Contact" class="contact-img" /></a></li>
                   </ul>
-                  <button class="menu-toggle">☰</button>
+                  
                 </div>
               </div>
               
             
             
-        </div>
+        </div> -->
         <div class="content">
                <div class="branding">
                  <div class="name">
                  <img src="—Pngtree—indian man with turban rajasthani_8525577.png" alt="">
-                  <h1>BANSAL<br> RESTAURANT</h1>
+                  <h1 class="animated-gradient-text">BANSAL<br> RESTAURANT</h1>
           
                   </div>
         <div class="slogan">
@@ -48,7 +76,7 @@
         </div>
       </div>
       </div>
-        <div class="main2">
+        <div class="main2" id="main2">
           <div class="about">
             <img src="https://images.picxy.com/cache/2021/1/17/3fe967b0d6b79938f18d80abdec54435.webp" alt="">
             <div class="discrip">
@@ -61,11 +89,11 @@
             </div>
           </div>
 
-          <!-- <iframe src="https://www.google.com/maps/embed?pb=!4v1743278214629!6m8!1m7!1sp1pyzvc9N0jDhEuwODCcHQ!2m2!1d25.42344644052479!2d77.65772316327477!3f101.67195!4f0!5f0.7820865974627469" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+         
 
           </div>
          
-        <div class="main3">
+        <div class="main3" id="main3">
            <h1>Our Top Dishes</h1>
            <div class="dishes">
              
@@ -89,24 +117,65 @@
            </div>
 
         </div>
-        <div id="video-background">
-          <video autoplay loop muted playsinline id="bg-video">
-            Your browser does not support HTML5 video.
-          </video>
+        <div class="main4" id="main4">
+          <div class="box">
+          <div class="heading">
+            <h1>Our Resources: A Taste of Tradition, From Farm to Plate</h1>
+          </div>
+          <div class="resources">
+            <div id="resources">
+              <video autoplay loop muted playsinline id="bg-resources">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <h2>✅ Handpicked Grains from Local Fields 🌾
+              Our wheat and lentils are sourced directly from local farms, ensuring purity and authenticity in every bite. Each grain is carefully selected to preserve the rich, earthy flavors of traditional Rajasthani cuisine.<br>
+              
+              ✅ Pure Desi Ghee for Rich Flavor 🧈
+              We use 100% pure desi ghee, prepared using traditional churning methods. This golden elixir enhances the aroma and taste of every dish, making our Dal Bati, Bafla, and Tikkad an indulgent delight.<br>
+              
+              ✅ Authentic Cooking Methods 🍛
+              Our dishes are cooked using time-honored techniques, including slow roasting and clay oven baking, to retain the rustic flavors and wholesome goodness of Rajasthan’s culinary heritage.<br>
+              
+              ✅ Fresh, Natural Ingredients 🌿
+              We believe in serving food that’s fresh, natural, and free from preservatives. From hand-ground spices to sun-dried herbs, every ingredient is chosen to bring out the best in our dishes.</h2>
+
+          </div>
         </div>
-          
+        </div>
+        <div class="main5" id="main5">
+             <div class="location">
+                   <div class="lh">
+                       <h1>🍽 Your Next Meal Awaits – Find Us Here!</h1>
+                   </div>
+                   <div class="gooo">
+                    <div class="td">
+                  <iframe src="https://www.google.com/maps/embed?pb=!4v1743278214629!6m8!1m7!1sp1pyzvc9N0jDhEuwODCcHQ!2m2!1d25.42344644052479!2d77.65772316327477!3f101.67195!4f0!5f0.7820865974627469" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <DIv class="2D">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.53715109109!2d77.65674431442682!3d25.424034397777742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3970bbe07e13ef5b%3A0x2253426dc4730fcf!2sBansal%20restaurent!5e1!3m2!1sen!2sin!4v1743527226067!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </DIv>
+                  </div>
+
+             </div>
+        </div>
+        <div class="video-container">
+          <video autoplay loop muted>
+              <source src="Clipchamp.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
       </div>
         
-          
-        
+      
         
         
     
-    <!-- <div id="video-background">
-      <video autoplay loop muted playsinline id="bg-video">
-        Your browser does not support HTML5 video.
-      </video>
-    </div> -->
+      <footer class="footer">
+        <div class="footer-content">
+          <h4>&copy; 2025 Bansal Restaurant | Contact: +91 123 456 7890<br>Designed by Deep</h4>
+        </div>
+      </footer>
+      
     <script src="restro.js"></script>
 </body>
 </html>
